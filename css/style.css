@@ -155,7 +155,7 @@ footer {
 
 /* Indicator Matrix */
 .indicator-matrix-list {
-	width: 40%;
+	width: 35%;
 	min-width: 210px;
 }
 
@@ -166,7 +166,7 @@ footer {
 }
 
 .indicator-matrix-details {
-	width: 60%;
+	width: 65%;
 	overflow-x: auto;
 }
 
