@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>TG 3 Boilerplate</title>
+
+		<!-- Core Styles -->
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/core.css">
+
+		<!-- Web Font Icons -->
+		<link rel="stylesheet" href="fontello/css/fontello.css" />
+		<link rel="stylesheet" href="fontello/css/animation.css">
+
+		<!-- TG Proposal Feature style -->
+		<link rel="stylesheet" href="css/style.css">
+
+	</head>
+
+	<body ng-app="target">
+		<div id="ctrlWrapper">
+			<div id="wrapper" class="target-web">
+				<header class="app-header">
+					<div class="container-fluid">
+						<h2 class="app-header-title">Indicator Matrix | Responsive Div Table</h2>
+					</div>
+				</header>
+
+				<div id="content-wrapper" class="container-fluid">
+					<div class="tg-indicator-matrix fluid-table">
+						<div class="indicator-matrix-list">
+							<div class="ft-header">Indicadores</div>
+							<div class="ft-body">
+								<div class="ft-group">
+									<div class="ft-row">
+										<h2 class="ft-group-title">
+											<span class="iconfont icon-dollar"></span>
+											Financeiro
+										</h2>
+									</div>
+									<div class="ft-row ft-cel">
+										<!-- Se tiver filhos, acrescentar a classe 'has-child' -->
+										<span class="animate indicator-item has-child">
+											<!-- Se aberto, classe 'icon-up-open', senão, classe 'icon-down-open' -->
+											<span class="iconfont treeview-icon icon-up-open"></span>
+											<span class="ft-indicator-name">
+												Nome do Indicador
+											</span>
+											<button class="show-indicator-snippet btn btn-default btn-xs pull-right animate">
+												<span class="iconfont icon-chart-line"></span>
+											</button>
+										</span>
+									</div>
+									<!-- Indicadores filhos logo abaixo e exibidos apenas quando for clicado no pai -->
+									<div class="ft-row ft-cel">
+										<span class="animate indicator-item ind-child">
+											<span class="ft-indicator-name">
+												Nome do Indicador filho de outro indicador
+											</span>
+											<button class="show-indicator-snippet btn btn-default btn-xs pull-right animate">
+												<span class="iconfont icon-chart-line"></span>
+											</button>
+										</span>
+									</div>
+									<!-- fim indicador filho -->
+									<div class="ft-row ft-cel">
+										<span class="animate indicator-item">
+											<span class="ft-indicator-name">
+												Nome do Indicador que não tem filhos
+											</span>
+											<button class="show-indicator-snippet btn btn-default btn-xs pull-right animate">
+												<span class="iconfont icon-chart-line"></span>
+											</button>
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="ft-body">
+								<div class="ft-group">
+									<div class="ft-row">
+										<h2 class="ft-group-title">
+											<span class="iconfont icon-users"></span>
+											Clientes
+										</h2>
+									</div>
+									<div class="ft-row ft-cel">
+										<span class="animate indicator-item has-child">
+											<span class="iconfont treeview-icon icon-down-open"></span>
+											<span class="ft-indicator-name ">
+												Nome do Indicador
+											</span>
+											<button class="show-indicator-snippet btn btn-default btn-xs pull-right animate">
+												<span class="iconfont icon-chart-line"></span>
+											</button>
+										</span>
+									</div>
+									<div class="ft-row ft-cel">
+										<span class="animate indicator-item has-child">
+											<span class="iconfont treeview-icon icon-down-open"></span>
+											<span class="ft-indicator-name ">
+												Nome do Indicador
+											</span>
+											<button class="show-indicator-snippet btn btn-default btn-xs pull-right animate">
+												<span class="iconfont icon-chart-line"></span>
+											</button>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="indicator-matrix-details tg-custom-scroll">
+							<div class="ip-details-wrapper">
+								<div class="ft-header">
+									<div class="ft-valor ft-col">
+										V. Real <small class="text-muted">- R$</small>
+									</div>
+									<div class="ft-meta ft-col">
+										Meta <small class="text-muted">- R$</small>
+									</div>
+									<div class="ft-col">Jan</div>
+									<div class="ft-col">Fev</div>
+									<div class="ft-col">Mar</div>
+									<div class="ft-col">Abr</div>
+									<div class="ft-col">Mai</div>
+									<div class="ft-col current-item">Jun</div>
+									<div class="ft-col">Jul</div>
+									<div class="ft-col">Ago</div>
+									<div class="ft-col">Set</div>
+									<div class="ft-col">Out</div>
+									<div class="ft-col">Nov</div>
+									<div class="ft-col">Dez</div>
+									<div class="ft-col year-amount">2016</div>
+								</div>
+								<div class="ft-body">
+									<div class="ft-group">
+										<div class="ft-rol">
+											<h2 class="ft-group-title">&nbsp;</h2>
+										</div>
+										<div class="ft-rol">
+											<div class="ft-valor ft-cel ft-col">
+												<span class="badge ind-late">
+													125.222,22
+													<span class="badge-extend">
+														59
+														<span class="percent-symbol">%</span>
+													</span>
+												</span>
+												<span class="ind-polarity pull-right iconfont treeview-icon icon-up"></span>
+											</div>
+											<div class="ft-meta ft-cel ft-col">
+													2100.560,00
+											</div>
+
+											<div class="period-row">
+
+												<div class="period-range">
+													<span class="percent-status" style="width: calc(3 * 100%/13)">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-exceeded"></span>
+													</span>
+													<span class="percent-status" style="width: calc(3 * 100%/13)">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-progress"></span>
+													</span>
+													<span class="percent-status" style="width: calc(3 * 100%/13)">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-late"></span>
+													</span>
+													<span class="percent-status" style="width: calc(3 * 100%/13)">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-achieved"></span>
+													</span>
+												</div>
+
+												<div class="ft-cel ft-col">
+												</div>
+												<div class="ft-cel ft-col">
+												</div>
+												<div class="ft-cel ft-col">
+												</div>
+												<div class="ft-cel ft-col">
+												</div>
+												<div class="ft-cel ft-col">
+												</div>
+												<div class="ft-cel ft-col current-item">
+												</div>
+												<div class="ft-cel ft-col">
+												</div>
+												<div class="ft-cel ft-col">
+												</div>
+												<div class="ft-cel ft-col">
+												</div>
+												<div class="ft-cel ft-col">
+												</div>
+												<div class="ft-cel ft-col">
+												</div>
+												<div class="ft-cel ft-col">
+												</div>
+												<div class="ft-cel ft-col year-amount">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-late"></span>
+													</span>
+												</div>
+											</div>
+										</div>
+										<!-- Row do indicador filho que será exibido quando houver interação no pai -->
+										<div class="ft-rol">
+											<div class="ft-valor ft-cel ft-col">
+												<span class="badge ind-achieved">
+													125.222,22
+													<span class="badge-extend">
+														59
+														<span class="percent-symbol">%</span>
+													</span>
+												</span>
+												<span class="ind-polarity pull-right iconfont treeview-icon icon-up"></span>
+											</div>
+											<div class="ft-meta ft-cel ft-col">
+													2100.560,00
+											</div>
+											
+											<div class="period-row">
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-exceeded"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-achieved"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-late"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-progress"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-late"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col current-item">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-achieved"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-progress"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-exceeded"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-late"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-progress"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-achieved"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-late"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col year-amount">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-late"></span>
+													</span>
+												</div>
+											</div>
+											<div class="ft-rol">
+												<div class="ft-valor ft-cel ft-col">
+													<span class="badge ind-progress ind-progress">
+														7.890,55
+														<span class="badge-extend">
+															5
+															<span class="percent-symbol">%</span>
+														</span>
+													</span>
+													<span class="ind-polarity pull-right iconfont treeview-icon icon-up"></span>
+												</div>
+												<div class="ft-meta ft-cel ft-col">
+														150.280,23
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-exceeded"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-late"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-achieved"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-progress"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-late"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col current-item">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-late"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-progress"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-progress"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-achieved"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-progress"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-exceeded"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-progress"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col year-amount">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-progress"></span>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div><div class="ft-body">
+									<div class="ft-group">
+										<div class="ft-rol">
+											<h2 class="ft-group-title">&nbsp;</h2>
+										</div>
+										<div class="ft-rol">
+											<div class="ft-valor ft-cel ft-col">
+												<span class="badge ind-late">
+													3.560,22
+													<span class="badge-extend">
+														0
+														<span class="percent-symbol">%</span>
+													</span>
+												</span>
+												<span class="ind-polarity pull-right iconfont treeview-icon icon-up"></span>
+											</div>
+											<div class="ft-meta ft-cel ft-col">
+													2.560.245,22
+											</div>
+
+											<div class="period-row">
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-progress"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-progress"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-achieved"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-exceeded"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-progress"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col current-item">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-late"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-late"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-achieved"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-exceeded"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-exceeded"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-progress"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-late"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col year-amount">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-late"></span>
+													</span>
+												</div>
+											</div>
+											<div class="ft-rol">
+												<div class="ft-valor ft-cel ft-col">
+													<span class="badge ind-exceeded">
+														20.000,00
+														<span class="badge-extend">
+															432
+															<span class="percent-symbol">%</span>
+														</span>
+													</span>
+													<span class="ind-polarity pull-right pull-right iconfont icon-down"></span>
+												</div>
+												<div class="ft-meta ft-cel ft-col">
+													4.623,55
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-achieved"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-achieved"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-achieved"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-progress"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-exceeded"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col current-item">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-late"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-exceeded"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-exceeded"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-exceeded"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-achieved"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-progress"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-progress"></span>
+													</span>
+												</div>
+												<div class="ft-cel ft-col year-amount">
+													<span class="percent-status">
+														100
+														<span class="percent-symbol">%</span>
+														<span class="tg-status ind-exceeded"></span>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer></footer>
+		</div>
+
+		<!-- Bootstrap -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+		<script src="../../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+		<!-- Angular UI Boostrap -->
+		<script src="../../angular-bootstrap/angular.js" type="text/javascript"></script>
+		<script src="../../angular-bootstrap/ui-bootstrap-tpls-1.3.1.min.js" type="text/javascript"></script>
+		<script src="../../app/app.js" type="text/javascript"></script>
+
+		<!-- Highcharts -->
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/highcharts-more.js"></script>
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>
+		<script src="https://code.highcharts.com/modules/data.js"></script>
+		<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+
+		<!-- Indicator gauge -->
+		<script src="../../js/tg-gauge.js"></script>
+
+	</body>
+</html>

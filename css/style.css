@@ -1,0 +1,341 @@
+/* TG Indicator Matrix
+============================*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+	font-family: "Roboto", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #333333;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	min-height: 100vh;
+	background: #fbfbfb;
+}
+
+#ctrlWrapper {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	min-height: inherit;
+}
+
+#wrapper {
+	-webkit-flex: 1 0 auto;
+	-ms-flex: 1 0 auto;
+	flex: 1 0 auto;
+}
+
+.tg-status {
+	display: inline-block;
+	height: 10px;
+	width: 10px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-ms-border-radius: 2px;
+	border-radius: 2px;
+}
+
+/* Simular as cores de status do TG Facilit */
+.concluido, .ind-exceeded { background: #3498db; box-shadow: 0px 1px 6px -1px #3498db; }
+.a-iniciar { background: #999999; box-shadow: 0px 1px 6px -1px #999;}
+.em-andamento, .ind-achieved { background: #2ecc71; box-shadow: 0px 1px 6px -1px #2ecc71; }
+.atrasado, .ind-late { background: #e74c3c; box-shadow: 0px 1px 6px -1px #e74c3c; }
+.paralisado, .ind-progress { background: #f1c40f; box-shadow: 0px 1px 6px -1px #f1c40f }
+
+footer {
+	background: #006CB5;
+	height: 32px;
+	width: 100%;
+	float: left;
+}
+
+.btn {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    border: 0 none;
+    text-transform: uppercase;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    will-change: box-shadow;
+    border-radius: 2px;
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn .iconfont {
+    margin: 0 -4px;
+}
+
+.animate {
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+.app-header {
+	background: #006CB5;
+	color: #fff;
+}
+
+.app-header-title {
+	margin-top: 10px;
+}
+
+/* Xl Grid Media Querie
+-------------------------*/
+@media (min-width: 1600px) {
+	.col-xl-6 {
+		width: 25%;
+	}
+}
+
+/*Aplicar ao Core*/
+.fluid-table {
+	width: 100%;
+	box-shadow: 0px -1px 0px 0px #E1E6EA;
+	margin: 15px 0;
+	display: flex;
+}
+
+.ft-header {
+	width: 100%;
+	float: left;
+	text-align: center;
+	box-shadow: -1px -1px 0 0 #E1E6EA inset, 1px 0px 0 0 #E1E6EA inset, 1px 1px 0 0 #E1E6EA;
+	height: 40px;
+	/*text-transform: uppercase;*/
+	line-height: 40px;
+	font-weight: bold;
+	margin-bottom: 8px;
+	background-color: #F4F5F7;
+}
+
+.ft-body, .ft-row, .ft-group {
+	width: 100%;
+	float: left;
+}
+
+.ft-group {
+	margin: 6px 0;
+}
+
+.ft-group-title {
+	box-shadow: 0px -6px 0 0 #E1E6EA inset;
+	padding-bottom: 15px;
+	margin: 0;
+	font-size: 1.4em !important;
+	color: #333;
+}
+
+.ft-group-title .iconfont {
+	color: #d2d5d8;
+}
+
+.ft-col {
+	float: left;
+	box-shadow: -1px -1px 0 0 #E1E6EA inset;
+}
+
+.ft-cel {
+	box-shadow: -1px -1px 0 0px #E1E6EA inset;
+	height: 40px;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.ft-col.current-item {
+	background: rgba(225, 230, 234, 0.39);
+}
+
+/* Indicator Matrix */
+.indicator-matrix-list {
+	width: 40%;
+	min-width: 210px;
+}
+
+.indicator-matrix-list .ft-cel {
+	text-align: left;
+	padding-left: 15px;
+	box-shadow: -1px -1px 0 0px #E1E6EA inset, 1px -1px 0 0px #E1E6EA inset;
+}
+
+.indicator-matrix-details {
+	width: 60%;
+	overflow-x: auto;
+}
+
+.indicator-item {
+	margin-left: -6px;
+	white-space: nowrap;
+}
+
+.indicator-item.has-child {
+	cursor: pointer;
+}
+
+.indicator-item.has-child:hover {
+	color: #0087e2;
+	text-shadow: 0 4px 5px rgba(0, 135, 226, 0.32);
+}
+
+.indicator-item .treeview-icon {
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	background: #fff;
+	position: relative;
+	z-index: 1;
+}
+
+.indicator-item .treeview-icon::before {
+	width: auto;
+}
+
+.indicator-item .show-indicator-snippet {
+	margin-right: 5px;
+	margin-top: -1px;
+}
+
+.ip-details-wrapper, .indicator-item {
+	width: 100%;
+	float: left;
+}
+
+.ip-details-wrapper {
+	min-width: 800px;
+}
+
+/*Children Indicators*/
+.indicator-item.ind-child {
+	margin-left: 8px;
+	width: calc(100% - 14px);
+	position: relative;
+}
+
+.indicator-item.ind-child::before {
+	content: "";
+	width: 1px;
+	border-left: 1px dotted #b7b9bb;
+	position: absolute;
+	left: -7px;
+	top: -30px;
+	height: 40px;
+}
+
+.indicator-item.ind-child::after {
+	content: "";
+	width: 18px;
+	border-bottom: 1px dotted #b7b9bb;
+	position: absolute;
+	left: -6px;
+	top: 10px;
+}
+
+.ft-indicator-name {
+	margin-left: 20px;
+	display: inline-block;
+	max-width: 70%;
+	overflow: hidden;
+	display: inline-flex;
+}
+
+.has-child .ft-indicator-name {
+	margin-left: 0;
+}
+
+.indicator-matrix-details .ft-col {
+	/*Cálculo compensando larguras definidas das colunas de valor real e meta*/
+	width: calc(65%/13);
+}
+
+.indicator-matrix-details .period-row {
+	width: 65%;
+	float: left;
+	position: relative;
+}
+
+.indicator-matrix-details .period-row .ft-col {
+	width: calc(100%/13);
+}
+
+.indicator-matrix-details .period-range {
+	width: 100%;
+	float: left;
+	position: absolute;
+	margin-top: 10px;
+}
+
+.indicator-matrix-details .ft-cel.ft-col .badge {
+	padding: 5px 9px;
+	position: relative;
+	top: -2px;
+}
+
+.indicator-matrix-details .badge-extend {
+	border-radius: 10px;
+	border-top-left-radius: 0;
+	background: rgba(0, 0, 0, 0.56);
+	color: rgba(255, 255, 255, 0.83);
+	padding: 4px 9px;
+	min-width: 10px;
+	position: relative;
+	right: -9px;
+}
+
+.indicator-matrix-details .badge.ind-progress {
+	color: #403300;
+}
+
+.indicator-matrix-details .ind-polarity {
+	opacity: .5;
+	font-size: 1.3em;
+	position: relative;
+	top: -3px;
+}
+
+/* Valor Real */
+.indicator-matrix-details .ft-valor {
+	width: 22%;
+}
+
+/* Meta */
+.indicator-matrix-details .ft-meta {
+	width: 13%;
+}
+
+/* Total Anual */
+.year-amount.ft-col {
+	background: #e1e6ea;
+}
+
+/*TG status with value inside*/
+.percent-status {
+	font-size: 12px;
+	width: 100%;
+	margin-top: -4px;
+	float: left;
+	color: rgba(51, 51, 51, 0.84);
+	text-align: center;
+}
+
+.percent-status .tg-status {
+	width: calc(100% - 12px);
+	height: 4px;
+	display: block;
+	margin: 4px auto;
+}
+
+.percent-status .tg-status.ind-progress {
+	color: #403300;
+}
+
+.percent-symbol {
+	font-size: 80%;
+	font-weight: normal;
+	opacity: .8;
+}
